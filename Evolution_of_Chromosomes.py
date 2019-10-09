@@ -260,13 +260,6 @@ class ExplorePopulation:
         value.append(all_info)
         return {key: value}
 
-    def check_health(self, explored):
-        """
-        health is a list of the best health score from each aprent and mutated
-            children group. health scores ar integers
-        """
-        health = [sub_lst[0][0] for sub_lst in explored]
-
     def parent_and_children(self):
         random.shuffle(self.pop.pos)
         parent = [1] + self.pop.pos
@@ -316,7 +309,7 @@ class ExplorePopulation:
 
 evolutions = 125
 # number of individuals participating in tournament selection, greater numbers
-# == > more squed towards faster convergence
+# == > more sqewed towards faster convergence
 kwargs = {
     "tournament_size": 2,
     "population_size": 20,
